@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Created by LaunchCode
- */
 @Controller
 @RequestMapping("cheese")
 public class CheeseController {
@@ -39,7 +36,6 @@ public class CheeseController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCheeseForm(Model model) {
         model.addAttribute("title", "Add Cheese");
-        model.addAttribute(new Cheese());
         model.addAttribute("cheese", new Cheese());
         model.addAttribute("categories", categoryDao.findAll());
         return "cheese/add";
